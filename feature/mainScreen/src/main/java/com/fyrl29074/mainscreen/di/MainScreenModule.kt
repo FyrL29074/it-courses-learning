@@ -4,7 +4,8 @@ import com.fyrl29074.mainscreen.data.CourseMapper
 import com.fyrl29074.mainscreen.data.CoursesRepositoryImpl
 import com.fyrl29074.mainscreen.domain.CoursesRepository
 import com.fyrl29074.mainscreen.domain.GetCoursesUseCase
-import com.fyrl29074.mainscreen.presentation.MainScreenViewModel
+import com.fyrl29074.mainscreen.presentation.CourseFormatter
+import com.fyrl29074.mainscreen.presentation.MainViewModel
 import com.fyrl29074.network.di.NetworkModule
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
@@ -20,5 +21,6 @@ val MainFeatureModule = module {
 
     singleOf(::GetCoursesUseCase)
 
-    viewModel { MainScreenViewModel(get()) }
+    singleOf(::CourseFormatter)
+    viewModel { MainViewModel(get(), get()) }
 }

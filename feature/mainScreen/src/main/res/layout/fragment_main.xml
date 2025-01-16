@@ -3,9 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/dark"
-    android:padding="16dp"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
     tools:context="com.fyrl29074.mainscreen.presentation.MainFragment">
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -41,17 +43,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:drawablePadding="4dp"
+        android:text="@string/by_date_ascending"
         app:drawableEndCompat="@drawable/ic_sort"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/filter"
-        tools:text="По дате добавление " />
+        app:layout_constraintTop_toBottomOf="@id/filter" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/course_list"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="112dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

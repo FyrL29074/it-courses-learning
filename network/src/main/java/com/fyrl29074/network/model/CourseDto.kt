@@ -18,14 +18,14 @@ data class CourseDto(
     @SerializedName("cover")
     val imageUrl: String,
 
+    @SerializedName("price")
+    val price: Float,
+
     @SerializedName("display_price")
     val displayPrice: String,
 
     @SerializedName("create_date")
-    val createData: String, // todo: maybe I should change to Date
-
-    @SerializedName("update_date")
-    val updateData: String, // todo: maybe I should change to Date
+    val createDate: String,
 
     // TODO: I need to add review score here, but I didn't find it in API
 //    @SerializedName("")

@@ -13,6 +13,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 val NetworkModule = module {
 
     single {
+        // TODO: handle java.net.SocketTimeoutException: timeout
+        // TODO: run app without internet  ( handle HTTP FAILED: java.net.UnknownHostException: Unable to resolve host "stepik.org": No address associated with hostname
+        // TODO: handle others connection exceptions
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
 
