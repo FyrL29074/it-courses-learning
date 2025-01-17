@@ -21,3 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "it-courses-learning"
 include(":app")
+include(":feature:mainScreen")
+include(":ui-kit")
+include(":network")
+include(":navigation")
