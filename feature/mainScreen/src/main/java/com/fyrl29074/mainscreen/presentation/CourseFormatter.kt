@@ -30,7 +30,8 @@ class CourseFormatter {
             dayOfMonth = day,
             monthName = month,
             year = year.toString(),
-            createDate = course.createDate
+            createDate = course.createDate,
+            courseUrl = course.courseUrl
         )
     }
 }

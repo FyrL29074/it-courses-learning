@@ -27,6 +27,9 @@ data class CourseDto(
     @SerializedName("create_date")
     val createDate: String,
 
+    @SerializedName("canonical_url")
+    val courseUrl: String,
+
     // TODO: I need to add review score here, but I didn't find it in API
 //    @SerializedName("")
 //    val reviewScore: Float,

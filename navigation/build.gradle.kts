@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("kotlin-parcelize")
 }
 
 android {
-    namespace = "com.fyrl29074.mainscreen"
+    namespace = "com.fyrl29074.navigation"
     compileSdk = 35
 
     defaultConfig {
@@ -31,27 +30,14 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
 
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.koin.android)
-    implementation(libs.glide)
-
-    implementation(project(":ui-kit"))
-    implementation(project(":network"))
-    implementation(project(":navigation"))
-    implementation(libs.androidx.legacy.support.v4)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.fragment.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }

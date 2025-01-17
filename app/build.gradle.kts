@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -52,4 +53,5 @@ dependencies {
     // other modules
     implementation(project(":feature:mainScreen"))
     implementation(project(":ui-kit"))
+    implementation(project(":navigation"))
 }

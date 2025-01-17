@@ -1,4 +1,4 @@
-package com.fyrl29074.mainscreen.presentation
+package com.fyrl29074.mainscreen.presentation.mainScreen
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.fyrl29074.mainscreen.R
 import com.fyrl29074.mainscreen.databinding.ItemCourseBinding
+import com.fyrl29074.mainscreen.presentation.CourseUI
 
 // TODO: add pagination
 class CourseAdapter(
     private val onFavouriteClick: (id: Int) -> Unit,
-    private val onMoreDetailsClick: () -> Unit,
+    private val onMoreDetailsClick: (course: CourseUI) -> Unit,
 ) : ListAdapter<CourseUI, CourseAdapter.CourseViewHolder>(courseDiffUtilCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
@@ -25,8 +26,7 @@ class CourseAdapter(
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
         val course = getItem(position)
         with(holder.binding) {
-            Glide
-                .with(itemCourse)
+            Glide.with(itemCourse)
                 .load(course.imageUrl)
                 .into(image)
 
@@ -47,7 +47,7 @@ class CourseAdapter(
                 price.isVisible = true
                 price.text = course.displayPrice
             }
-            moreDetails.setOnClickListener { onMoreDetailsClick() }
+            moreDetails.setOnClickListener { onMoreDetailsClick(course) }
         }
     }
 

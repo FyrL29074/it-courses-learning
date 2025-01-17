@@ -19,6 +19,7 @@ class CourseMapper {
             price = dto.price,
             displayPrice = dto.displayPrice,
             createDate = createDate,
+            courseUrl = dto.courseUrl
         )
     }
 }

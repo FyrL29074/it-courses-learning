@@ -1,4 +1,4 @@
-package com.fyrl29074.mainscreen.presentation
+package com.fyrl29074.mainscreen.presentation.mainScreen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,12 +7,14 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
+import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
 import com.fyrl29074.mainscreen.R
 import com.fyrl29074.mainscreen.databinding.FragmentMainBinding
+import com.fyrl29074.mainscreen.presentation.CourseUI
+import com.fyrl29074.navigation.Navigation
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class MainFragment : Fragment() {
 
@@ -22,7 +24,10 @@ class MainFragment : Fragment() {
     private val viewModel: MainViewModel by viewModel()
 
     private val adapter: CourseAdapter by lazy {
-        CourseAdapter(viewModel::onFavouriteClick, viewModel::onMoreDetailsClick)
+        CourseAdapter(
+            onFavouriteClick = viewModel::onFavouriteClick,
+            onMoreDetailsClick = { course -> onMoreDetailsClick(course) }
+        )
     }
 
     override fun onCreateView(
@@ -45,11 +50,19 @@ class MainFragment : Fragment() {
         _binding = null
     }
 
+    private fun onMoreDetailsClick(course: CourseUI) {
+        val bundle = bundleOf("course" to course)
+        (requireActivity() as Navigation).navigateToCourseScreen(
+            fragment = this,
+            bundle,
+        )
+    }
+
     private fun initUI() {
         with(binding) {
             courseList.adapter = adapter
 
-            binding.sort.setOnClickListener {
+            sort.setOnClickListener {
                 val popupMenu = PopupMenu(this@MainFragment.requireContext(), it)
                 popupMenu.menuInflater.inflate(R.menu.menu_sort, popupMenu.menu)
 
@@ -98,8 +111,8 @@ class MainFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.state.collect { state ->
                 when (state) {
-                    is State.Content -> adapter.submitList(state.courses)
-                    State.Initializing -> {}
+                    is MainScreenState.Content -> adapter.submitList(state.courses)
+                    MainScreenState.Initializing -> {}
                 }
             }
         }

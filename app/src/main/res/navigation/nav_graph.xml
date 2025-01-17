@@ -3,22 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/main_fragment">
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.fyrl29074.mainscreen.presentation.MainFragment"
+        android:id="@+id/main_fragment"
+        android:name="com.fyrl29074.mainscreen.presentation.mainScreen.MainFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_courseFragment"
+            app:destination="@id/course_fragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/favouritesFragment"
+        android:id="@+id/course_fragment"
+        android:name="com.fyrl29074.mainscreen.presentation.courseScreen.CourseFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <argument
+            android:name="course"
+            app:argType="com.fyrl29074.mainscreen.presentation.CourseUI" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favourites_fragment"
         android:name="com.fyrl29074.it_courses_learning.todoMoveThisFeaturesToAnotherModule.FavouritesFragment"
         android:label="FavouritesFragment"
         tools:layout="@layout/fragment_favourites" />
 
     <fragment
-        android:id="@+id/accountFragment"
+        android:id="@+id/account_fragment"
         android:name="com.fyrl29074.it_courses_learning.todoMoveThisFeaturesToAnotherModule.AccountFragment"
         android:label="AccountFragment"
         tools:layout="@layout/fragment_account" />
