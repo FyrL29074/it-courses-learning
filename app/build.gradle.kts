@@ -44,14 +44,15 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.koin.android)
 
-    // navigation
-
     // Views/Fragments Integration
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
     // other modules
     implementation(project(":feature:mainScreen"))
+    implementation(project(":feature:favourites"))
+    implementation(project(":feature:courseScreen"))
     implementation(project(":ui-kit"))
     implementation(project(":navigation"))
+    implementation(project(":shared:model"))
 }

@@ -24,11 +24,7 @@ class MainActivity : AppCompatActivity(), Navigation {
     }
 
     override fun navigateToCourseScreen(fragment: Fragment, course: Bundle) {
-        findNavController(R.id.fragment_container)
-            .navigate(
-                R.id.action_mainFragment_to_courseFragment,
-                course,
-            )
+        findNavController(R.id.fragment_container).navigate(R.id.course_fragment, course)
     }
 
     override fun back() {

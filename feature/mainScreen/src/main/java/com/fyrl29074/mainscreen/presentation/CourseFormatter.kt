@@ -1,6 +1,7 @@
 package com.fyrl29074.mainscreen.presentation
 
-import com.fyrl29074.mainscreen.domain.Course
+import com.fyrl29074.model.domain.Course
+import com.fyrl29074.model.presentation.CourseUI
 import java.util.Calendar
 import java.util.Locale
 
@@ -31,7 +32,23 @@ class CourseFormatter {
             monthName = month,
             year = year.toString(),
             createDate = course.createDate,
-            courseUrl = course.courseUrl
+            courseUrl = course.courseUrl,
+            isFavourite = course.isFavourite,
+        )
+    }
+
+    fun format(course: CourseUI): Course {
+        return Course(
+            id = course.id,
+            title = course.title,
+            summary = course.summary,
+            description = course.description,
+            imageUrl = course.imageUrl,
+            price = course.price,
+            displayPrice = course.displayPrice,
+            createDate = course.createDate,
+            courseUrl = course.courseUrl,
+            isFavourite = course.isFavourite,
         )
     }
 }

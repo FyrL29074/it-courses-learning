@@ -10,24 +10,21 @@
         android:name="com.fyrl29074.mainscreen.presentation.mainScreen.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
-        <action
-            android:id="@+id/action_mainFragment_to_courseFragment"
-            app:destination="@id/course_fragment" />
     </fragment>
 
     <fragment
         android:id="@+id/course_fragment"
-        android:name="com.fyrl29074.mainscreen.presentation.courseScreen.CourseFragment"
+        android:name="com.fyrl29074.coursescreen.presentation.CourseFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
         <argument
             android:name="course"
-            app:argType="com.fyrl29074.mainscreen.presentation.CourseUI" />
+            app:argType="com.fyrl29074.model.presentation.CourseUI" />
     </fragment>
 
     <fragment
         android:id="@+id/favourites_fragment"
-        android:name="com.fyrl29074.it_courses_learning.todoMoveThisFeaturesToAnotherModule.FavouritesFragment"
+        android:name="com.fyrl29074.favourites.presentation.FavouritesFragment"
         android:label="FavouritesFragment"
         tools:layout="@layout/fragment_favourites" />
 

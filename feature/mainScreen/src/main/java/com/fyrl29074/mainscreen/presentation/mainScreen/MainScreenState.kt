@@ -1,6 +1,6 @@
 package com.fyrl29074.mainscreen.presentation.mainScreen
 
-import com.fyrl29074.mainscreen.presentation.CourseUI
+import com.fyrl29074.model.presentation.CourseUI
 
 sealed class MainScreenState {
 
