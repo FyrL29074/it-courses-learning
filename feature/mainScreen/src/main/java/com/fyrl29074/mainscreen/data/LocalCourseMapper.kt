@@ -1,7 +1,7 @@
 package com.fyrl29074.mainscreen.data
 
 import com.fyrl29074.local.CourseEntity
-import com.fyrl29074.mainscreen.domain.Course
+import com.fyrl29074.model.domain.Course
 
 class LocalCourseMapper {
     fun map(course: Course): CourseEntity {

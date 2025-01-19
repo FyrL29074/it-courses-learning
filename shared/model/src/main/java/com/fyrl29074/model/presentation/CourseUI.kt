@@ -1,4 +1,4 @@
-package com.fyrl29074.mainscreen.presentation
+package com.fyrl29074.model.presentation
 
 import java.util.Date
 import android.os.Parcelable

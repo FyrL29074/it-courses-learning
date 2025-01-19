@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="more_details">Подробнее</string>
-    <string name="create_date">%1$s %2$s %3$s</string>
     <string name="by_date_ascending">По дате добавление по возрастанию</string>
     <string name="by_date_descending">По дате добавление по убыванию</string>
     <string name="by_rating">По рейтингу</string>

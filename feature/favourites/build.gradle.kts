@@ -30,6 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -40,4 +44,7 @@ dependencies {
 
     implementation(project(":local"))
     implementation(project(":navigation"))
+    implementation(project(":shared:model"))
+    implementation(project(":ui-kit"))
+    implementation(project(":feature:courseScreen"))
 }

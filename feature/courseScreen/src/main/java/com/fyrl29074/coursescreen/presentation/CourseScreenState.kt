@@ -1,6 +1,6 @@
-package com.fyrl29074.mainscreen.presentation.courseScreen
+package com.fyrl29074.coursescreen.presentation
 
-import com.fyrl29074.mainscreen.presentation.CourseUI
+import com.fyrl29074.model.presentation.CourseUI
 
 sealed class CourseScreenState {
 

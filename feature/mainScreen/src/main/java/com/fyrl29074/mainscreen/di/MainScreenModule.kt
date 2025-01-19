@@ -1,5 +1,6 @@
 package com.fyrl29074.mainscreen.di
 
+import com.fyrl29074.coursescreen.di.CourseScreenModule
 import com.fyrl29074.local.di.LocalModule
 import com.fyrl29074.mainscreen.data.NetworkCourseMapper
 import com.fyrl29074.mainscreen.data.CoursesRepositoryImpl
@@ -9,18 +10,15 @@ import com.fyrl29074.mainscreen.domain.useCase.AddToFavouritesUseCase
 import com.fyrl29074.mainscreen.domain.useCase.DeleteFromFavouritesUseCase
 import com.fyrl29074.mainscreen.domain.useCase.GetCoursesFlowUseCase
 import com.fyrl29074.mainscreen.presentation.CourseFormatter
-import com.fyrl29074.mainscreen.presentation.CourseUI
 import com.fyrl29074.mainscreen.presentation.mainScreen.MainViewModel
-import com.fyrl29074.mainscreen.presentation.courseScreen.CourseViewModel
 import com.fyrl29074.network.di.NetworkModule
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
-
 val MainFeatureModule = module {
-    includes(NetworkModule, LocalModule)
+    includes(NetworkModule, LocalModule, CourseScreenModule)
 
     singleOf(::CoursesRepositoryImpl) { bind<CoursesRepository>() }
     singleOf(::NetworkCourseMapper)
@@ -32,5 +30,4 @@ val MainFeatureModule = module {
 
     singleOf(::CourseFormatter)
     viewModel { MainViewModel(get(), get(), get(), get()) }
-    viewModel { (course: CourseUI) -> CourseViewModel(course, get(), get(), get()) }
 }

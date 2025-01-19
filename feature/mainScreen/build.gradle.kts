@@ -51,6 +51,8 @@ dependencies {
     implementation(project(":network"))
     implementation(project(":navigation"))
     implementation(project(":local"))
+    implementation(project(":shared:model"))
+    implementation(project(":feature:courseScreen"))
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

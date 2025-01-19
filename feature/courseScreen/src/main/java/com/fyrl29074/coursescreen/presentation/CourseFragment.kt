@@ -1,4 +1,4 @@
-package com.fyrl29074.mainscreen.presentation.courseScreen
+package com.fyrl29074.coursescreen.presentation
 
 import android.content.Intent
 import android.net.Uri
@@ -9,13 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
-import com.fyrl29074.mainscreen.R
-import com.fyrl29074.mainscreen.databinding.FragmentCourseBinding
-import com.fyrl29074.mainscreen.presentation.CourseUI
+import com.fyrl29074.coursescreen.databinding.FragmentCourseBinding
+import com.fyrl29074.model.presentation.CourseUI
 import com.fyrl29074.navigation.Navigation
 import kotlinx.coroutines.launch
-import org.koin.core.parameter.parametersOf
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class CourseFragment : Fragment() {
 
@@ -69,7 +68,7 @@ class CourseFragment : Fragment() {
 
             rating.text = "n.nn" // todo: get rating from api
             val formattedDate = getString(
-                R.string.create_date,
+                com.fyrl29074.ui_kit.R.string.create_date,
                 course.dayOfMonth,
                 course.monthName,
                 course.year

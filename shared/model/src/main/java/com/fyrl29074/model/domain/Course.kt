@@ -1,4 +1,4 @@
-package com.fyrl29074.mainscreen.domain
+package com.fyrl29074.model.domain
 
 import java.util.Date
 

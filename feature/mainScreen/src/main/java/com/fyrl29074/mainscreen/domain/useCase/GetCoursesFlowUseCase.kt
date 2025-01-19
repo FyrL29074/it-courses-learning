@@ -1,7 +1,7 @@
 package com.fyrl29074.mainscreen.domain.useCase
 
-import com.fyrl29074.mainscreen.domain.Course
 import com.fyrl29074.mainscreen.domain.CoursesRepository
+import com.fyrl29074.model.domain.Course
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flowOf

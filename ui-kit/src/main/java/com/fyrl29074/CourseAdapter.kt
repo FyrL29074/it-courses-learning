@@ -1,4 +1,4 @@
-package com.fyrl29074.mainscreen.presentation.mainScreen
+package com.fyrl29074
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.fyrl29074.mainscreen.R
-import com.fyrl29074.mainscreen.databinding.ItemCourseBinding
-import com.fyrl29074.mainscreen.presentation.CourseUI
+import com.fyrl29074.model.presentation.CourseUI
+import com.fyrl29074.ui_kit.R
+import com.fyrl29074.ui_kit.databinding.ItemCourseBinding
 
 // TODO: add pagination
 class CourseAdapter(
@@ -32,9 +32,9 @@ class CourseAdapter(
 
             addToFavourite.setOnClickListener { onFavouriteClick(course) }
             if (course.isFavourite) {
-                addToFavourite.setImageResource(com.fyrl29074.ui_kit.R.drawable.ic_favourites_green_filled)
+                addToFavourite.setImageResource(R.drawable.ic_favourites_green_filled)
             } else {
-                addToFavourite.setImageResource(com.fyrl29074.ui_kit.R.drawable.ic_favourites_white)
+                addToFavourite.setImageResource(R.drawable.ic_favourites_white)
             }
             rating.text = "n.nn" // TODO: need to get from API
             val formattedDate = root.context.getString(

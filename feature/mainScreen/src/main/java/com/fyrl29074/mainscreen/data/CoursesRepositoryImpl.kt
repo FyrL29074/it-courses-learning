@@ -1,8 +1,8 @@
 package com.fyrl29074.mainscreen.data
 
 import com.fyrl29074.local.LocalDataSource
-import com.fyrl29074.mainscreen.domain.Course
 import com.fyrl29074.mainscreen.domain.CoursesRepository
+import com.fyrl29074.model.domain.Course
 import com.fyrl29074.network.dataSources.NetworkDataSources
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -15,7 +15,7 @@ class CoursesRepositoryImpl(
 ) : CoursesRepository {
 
     override suspend fun getCourses(): List<Course> {
-        return networkDataSources.getCourses().map(networkCourseMapper::map)
+        return networkDataSources.getCourses().map { networkCourseMapper.map(it) }
     }
 
     override suspend fun addToFavourites(course: Course) {

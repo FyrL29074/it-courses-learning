@@ -1,6 +1,6 @@
 package com.fyrl29074.mainscreen.data
 
-import com.fyrl29074.mainscreen.domain.Course
+import com.fyrl29074.model.domain.Course
 import com.fyrl29074.network.model.CourseDto
 import java.text.SimpleDateFormat
 import java.util.Locale

@@ -1,11 +1,10 @@
-package com.fyrl29074.mainscreen.presentation.courseScreen
+package com.fyrl29074.coursescreen.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.fyrl29074.mainscreen.domain.useCase.AddToFavouritesUseCase
-import com.fyrl29074.mainscreen.domain.useCase.DeleteFromFavouritesUseCase
-import com.fyrl29074.mainscreen.presentation.CourseFormatter
-import com.fyrl29074.mainscreen.presentation.CourseUI
+import com.fyrl29074.coursescreen.domain.AddToFavouritesUseCase
+import com.fyrl29074.coursescreen.domain.DeleteFromFavouritesUseCase
+import com.fyrl29074.model.presentation.CourseUI
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch

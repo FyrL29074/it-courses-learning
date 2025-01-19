@@ -9,9 +9,10 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
+import com.fyrl29074.CourseAdapter
 import com.fyrl29074.mainscreen.R
 import com.fyrl29074.mainscreen.databinding.FragmentMainBinding
-import com.fyrl29074.mainscreen.presentation.CourseUI
+import com.fyrl29074.model.presentation.CourseUI
 import com.fyrl29074.navigation.Navigation
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel

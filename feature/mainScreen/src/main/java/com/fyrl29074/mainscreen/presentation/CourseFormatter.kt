@@ -1,6 +1,7 @@
 package com.fyrl29074.mainscreen.presentation
 
-import com.fyrl29074.mainscreen.domain.Course
+import com.fyrl29074.model.domain.Course
+import com.fyrl29074.model.presentation.CourseUI
 import java.util.Calendar
 import java.util.Locale
 
