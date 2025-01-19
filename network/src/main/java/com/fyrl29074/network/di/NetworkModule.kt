@@ -2,7 +2,7 @@ package com.fyrl29074.network.di
 
 import com.fyrl29074.network.api.CoursesApi
 import com.fyrl29074.network.api.ServerInfo
-import com.fyrl29074.network.dataSources.CoursesDataSource
+import com.fyrl29074.network.dataSources.NetworkDataSources
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.module.dsl.singleOf
@@ -33,5 +33,5 @@ val NetworkModule = module {
             .create(CoursesApi::class.java)
     }
 
-    singleOf(::CoursesDataSource)
+    singleOf(::NetworkDataSources)
 }

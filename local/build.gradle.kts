@@ -1,11 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("kotlin-parcelize")
+    id("com.google.devtools.ksp") version "2.1.0-1.0.29"
 }
 
 android {
-    namespace = "com.fyrl29074.mainscreen"
+    namespace = "com.fyrl29074.local"
     compileSdk = 35
 
     defaultConfig {
@@ -31,28 +31,24 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
 
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.koin.android)
-    implementation(libs.glide)
 
-    implementation(project(":ui-kit"))
-    implementation(project(":network"))
-    implementation(project(":navigation"))
-    implementation(project(":local"))
-    implementation(libs.androidx.legacy.support.v4)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+}
+
+kotlin {
+    sourceSets {
+        getByName("main") {
+            kotlin.srcDir("build/generated/ksp/main/kotlin")
+        }
+    }
 }

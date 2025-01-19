@@ -14,7 +14,7 @@ import com.fyrl29074.mainscreen.presentation.CourseUI
 
 // TODO: add pagination
 class CourseAdapter(
-    private val onFavouriteClick: (id: Int) -> Unit,
+    private val onFavouriteClick: (course: CourseUI) -> Unit,
     private val onMoreDetailsClick: (course: CourseUI) -> Unit,
 ) : ListAdapter<CourseUI, CourseAdapter.CourseViewHolder>(courseDiffUtilCallback) {
 
@@ -30,7 +30,12 @@ class CourseAdapter(
                 .load(course.imageUrl)
                 .into(image)
 
-            addToFavourite.setOnClickListener { onFavouriteClick(course.id) }
+            addToFavourite.setOnClickListener { onFavouriteClick(course) }
+            if (course.isFavourite) {
+                addToFavourite.setImageResource(com.fyrl29074.ui_kit.R.drawable.ic_favourites_green_filled)
+            } else {
+                addToFavourite.setImageResource(com.fyrl29074.ui_kit.R.drawable.ic_favourites_white)
+            }
             rating.text = "n.nn" // TODO: need to get from API
             val formattedDate = root.context.getString(
                 R.string.create_date,

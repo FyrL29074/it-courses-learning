@@ -11,7 +11,8 @@ data class Course(
     val price: Float,
     val displayPrice: String,
     val createDate: Date?,
-    val courseUrl: String
+    val courseUrl: String,
+    val isFavourite: Boolean,
 
     // TODO: I need to add review score here, but I didn't find it in API
 //    val reviewScore: Float,

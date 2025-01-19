@@ -111,8 +111,8 @@ class MainFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.state.collect { state ->
                 when (state) {
-                    is MainScreenState.Content -> adapter.submitList(state.courses)
                     MainScreenState.Initializing -> {}
+                    is MainScreenState.Content -> adapter.submitList(state.courses)
                 }
             }
         }

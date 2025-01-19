@@ -19,6 +19,7 @@ data class CourseUI(
     val year: String?,
     val createDate: Date?, // for sorting
     val courseUrl: String,
+    val isFavourite: Boolean,
 
     // TODO: I need to add review score here, but I didn't find it in API
 //    val reviewScore: Float,

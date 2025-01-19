@@ -22,8 +22,11 @@ class CourseFragment : Fragment() {
     private var _binding: FragmentCourseBinding? = null
     private val binding get() = _binding!!
 
+    private var isFavourite: Boolean = false
+
     private val viewModel: CourseViewModel by viewModel {
         val course: CourseUI? = arguments?.getParcelable("course")
+        isFavourite = course?.isFavourite ?: false
         parametersOf(course)
     }
 
@@ -55,7 +58,15 @@ class CourseFragment : Fragment() {
                 .into(image)
 
             back.setOnClickListener { navigation.back() }
-            addToFavourite.setOnClickListener { viewModel.addToFavourite(course.id) }
+            addToFavourite.setOnClickListener { onFavouriteClick(course) }
+            val favouriteIconRes =
+                if (isFavourite) {
+                    com.fyrl29074.ui_kit.R.drawable.ic_favourites_green_filled
+                } else {
+                    com.fyrl29074.ui_kit.R.drawable.ic_favourites_dark
+                }
+            binding.addToFavourite.setImageResource(favouriteIconRes)
+
             rating.text = "n.nn" // todo: get rating from api
             val formattedDate = getString(
                 R.string.create_date,
@@ -77,6 +88,29 @@ class CourseFragment : Fragment() {
         val intent = Intent(Intent.ACTION_VIEW)
         intent.data = Uri.parse(url)
         startActivity(intent)
+    }
+
+    private fun updateFavouriteIcon() {
+        val iconRes =
+            if (isFavourite) {
+                com.fyrl29074.ui_kit.R.drawable.ic_favourites_dark
+            } else {
+                com.fyrl29074.ui_kit.R.drawable.ic_favourites_green_filled
+            }
+
+        binding.addToFavourite.setImageResource(iconRes)
+    }
+
+    private fun onFavouriteClick(course: CourseUI) {
+        if (isFavourite) {
+            viewModel.deleteFromFavourites(course.id)
+            updateFavouriteIcon()
+            isFavourite = false
+        } else {
+            viewModel.addToFavourite(course)
+            updateFavouriteIcon()
+            isFavourite = true
+        }
     }
 
     private fun initFlow() {
