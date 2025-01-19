@@ -1,11 +1,10 @@
-package com.fyrl29074.it_courses_learning.todoMoveThisFeaturesToAnotherModule
+package com.fyrl29074.favourites
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.fyrl29074.it_courses_learning.R
 
 // TODO: olegkim0 move this fragment to another module
 class FavouritesFragment : Fragment() {

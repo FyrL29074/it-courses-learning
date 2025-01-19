@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/favourites_fragment"
-        android:name="com.fyrl29074.it_courses_learning.todoMoveThisFeaturesToAnotherModule.FavouritesFragment"
+        android:name="com.fyrl29074.favourites.FavouritesFragment"
         android:label="FavouritesFragment"
         tools:layout="@layout/fragment_favourites" />
 

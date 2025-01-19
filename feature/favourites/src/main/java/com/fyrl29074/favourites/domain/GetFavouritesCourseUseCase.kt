@@ -1,4 +1,4 @@
-package com.fyrl29074.it_courses_learning.todoMoveThisFeaturesToAnotherModule
+package com.fyrl29074.favourites.domain
 
 import com.fyrl29074.mainscreen.domain.Course
 import com.fyrl29074.mainscreen.domain.CoursesRepository
