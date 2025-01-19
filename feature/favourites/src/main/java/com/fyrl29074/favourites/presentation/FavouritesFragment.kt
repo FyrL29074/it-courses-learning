@@ -1,7 +1,6 @@
 package com.fyrl29074.favourites.presentation
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View

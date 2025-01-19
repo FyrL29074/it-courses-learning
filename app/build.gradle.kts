@@ -52,6 +52,7 @@ dependencies {
     implementation(project(":feature:mainScreen"))
     implementation(project(":feature:favourites"))
     implementation(project(":feature:courseScreen"))
+    implementation(project(":feature:account"))
     implementation(project(":ui-kit"))
     implementation(project(":navigation"))
     implementation(project(":shared:model"))

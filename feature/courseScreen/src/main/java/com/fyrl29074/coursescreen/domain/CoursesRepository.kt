@@ -1,7 +1,6 @@
 package com.fyrl29074.coursescreen.domain
 
 import com.fyrl29074.model.domain.Course
-import kotlinx.coroutines.flow.Flow
 
 interface CoursesRepository {
 
