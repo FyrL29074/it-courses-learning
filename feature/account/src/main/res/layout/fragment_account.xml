@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".todoMoveThisFeaturesToAnotherModule.AccountFragment">
+    tools:context="com.fyrl29074.account.AccountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello AccountFragment" />
+        android:text="stub" />
 
 </FrameLayout>

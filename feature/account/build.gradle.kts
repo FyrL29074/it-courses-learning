@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.fyrl29074.navigation"
+    namespace = "com.fyrl29074.account"
     compileSdk = 35
 
     defaultConfig {

@@ -9,18 +9,20 @@ import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 val NetworkModule = module {
 
     single {
-        // TODO: handle java.net.SocketTimeoutException: timeout
-        // TODO: run app without internet  ( handle HTTP FAILED: java.net.UnknownHostException: Unable to resolve host "stepik.org": No address associated with hostname
-        // TODO: handle others connection exceptions
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
 
         OkHttpClient.Builder()
             .addInterceptor(interceptor)
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(20, TimeUnit.SECONDS)
+            .writeTimeout(20, TimeUnit.SECONDS)
+            .retryOnConnectionFailure(true)
             .build()
     }
 
